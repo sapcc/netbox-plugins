@@ -8,12 +8,12 @@ type SISM_Device struct {
 	Planned_removal strfmt.DateTime `json:"planned_removal"`
 	Equi_no         string          `json:"equi_no"`
 	Last_sync       strfmt.DateTime `json:"last_sync"`
-	Device          NestedDevice    `json:"device"`
+	Device          Device          `json:"device"`
 }
 
-type NestedDevice struct {
-	Id          int    `json:"id"`
-	Url         string `json:"url"`
-	Name        string `json:"name"`
-	DisplayName string `json:"name"`
+type Device struct {
+	Id      int    `json:"id"`
+	Url     string `json:"url"`
+	Name    string `json:"name"`
+	Display string `json:"display"`
 }
