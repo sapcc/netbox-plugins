@@ -5,4 +5,4 @@ type SISM_Device struct {
 	Serial string `json:"sism_serial"`
 }
 
-const PluginPath = "/netbox-sism/netboxsism/"
+var PluginPath = "/netbox-sism/netboxsism/"
