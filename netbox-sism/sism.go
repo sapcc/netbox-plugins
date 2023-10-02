@@ -1,4 +1,4 @@
-package models
+package sism
 
 import "github.com/go-openapi/strfmt"
 
