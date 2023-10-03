@@ -1,4 +1,4 @@
-package sism
+package sism_v1
 
 type SISM_Device struct {
 	Id      string `json:"sism_id"`
@@ -13,3 +13,5 @@ type Device struct {
 	Name    string `json:"name"`
 	Display string `json:"display"`
 }
+
+const pluginPath = "netbox-sism/netboxsism/"
