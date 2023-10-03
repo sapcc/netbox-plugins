@@ -15,3 +15,4 @@ type Device struct {
 }
 
 const PluginPath = "netbox-sism/netboxsism/"
+const PluginVersion = "v1"
