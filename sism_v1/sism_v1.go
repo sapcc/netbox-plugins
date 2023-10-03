@@ -14,4 +14,4 @@ type Device struct {
 	Display string `json:"display"`
 }
 
-const pluginPath = "netbox-sism/netboxsism/"
+const PluginPath = "netbox-sism/netboxsism/"
