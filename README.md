@@ -10,6 +10,7 @@ import (
 	"os"
 
 	sism "github.com/sapcc/netbox-plugins/sism/sism_v2"
+	clusters "github.com/sapcc/netbox-plugins/clusters/clusters_v1"
 )
 
 func main() {
@@ -25,6 +26,20 @@ func main() {
 	fmt.Println("SISM Serial:", res.Serial)
 	fmt.Println("Device ID:", res.Device.Id)
 	fmt.Println("Device Name:", res.Device.Name)
+
+	cc, _ := clusters.New(os.Getenv("NETBOX_URL"), os.Getenv("NETBOX_TOKEN"), true)
+	wt := clusters.WritablePhysicalClusterRequest{}
+	wt.Name = "coolCluster"
+	wt.ClusterType = 5
+	cluster, err := cc.AddCluster(wt)
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println("cluster created")
+	fmt.Println(cluster.Id)
+	fmt.Println(cluster.Name)
+	fmt.Println(cluster.Url)
+
 }
 
 ```
