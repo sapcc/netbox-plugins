@@ -7,6 +7,14 @@ type PhysicalCluster struct {
 	Type    NestedClusterType `json:"cluster_type"`
 	Devices []NestedDevice    `json:"devices"`
 }
+
+type PhysicalClusterType struct {
+	Id           int    `json:"id"`
+	Url          string `json:"url"`
+	Name         string `json:"name"`
+	ClusterCount int    `json:"cluster_count"`
+}
+
 type WritablePhysicalClusterRequest struct {
 	Name        string `json:"name"`
 	ClusterType int    `json:"cluster_type"`
@@ -18,10 +26,14 @@ type ClusterType struct {
 	Name string `json:"name"`
 }
 
-type PhysicalClusterTypeRequest struct {
+type ListClusterTypesRequest struct {
 	Name string `json:"name"`
 }
 
+type ListClusterTypesResponse struct {
+	Count   int                   `json:"count"`
+	Results []PhysicalClusterType `json:"results"`
+}
 type NestedClusterType struct {
 	Id      int    `json:"id"`
 	Url     string `json:"url"`
@@ -37,7 +49,13 @@ type NestedDevice struct {
 }
 
 type ListClustersRequest struct {
-	Name string
+	Name        string `json:"name"`
+	ClusterType string `json:"cluster_type"`
+	Site        string `json:"site"`
+}
+
+type PhysicalClusterTypeRequest struct {
+	Name string `json:"name"`
 }
 
 type ListClustersResponse struct {
